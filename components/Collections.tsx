@@ -28,8 +28,8 @@ export default function Collections() {
             The Chimera Archives
           </h2>
           <p className="text-xl md:text-2xl text-neutral-600 font-serif italic leading-relaxed">
-            A curated collection of manifestations where elusive longings find
-            their final, enduring form.
+            A curated collection of manifestations where the impossible takes
+            form and reality bends to mythology.
           </p>
         </div>
 
@@ -39,14 +39,14 @@ export default function Collections() {
           <div className="lg:col-span-5 relative h-[380px] rounded-[3rem] overflow-hidden group shadow-sm bg-neutral-200">
             <Image
               src="/dreams/dream1.png"
-              alt="The First Awakening"
+              alt="Mythical Genesis"
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90"
             />
             <div className="absolute inset-0 p-10 flex flex-col justify-between z-10">
               <div>
                 <span className="text-base font-bold text-neutral-900 bg-transparent backdrop-blur-md self-start px-4 py-1 rounded-full tracking-wider italic">
-                  First Awakening
+                  Mythical Genesis
                 </span>
               </div>
               <div className="flex justify-end">
@@ -59,18 +59,20 @@ export default function Collections() {
           <div className="lg:col-span-3 relative h-[380px] rounded-[3rem] overflow-hidden">
             <Image
               src="/dreams/dream3.png"
-              alt="Lucid Architecture"
+              alt="Genetic Mosaic"
               fill
               className="object-cover opacity-80 transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 p-10 flex flex-col z-10">
               <span className="text-base font-bold text-neutral-900 bg-transparent backdrop-blur-md self-start px-4 py-1 rounded-full tracking-wider italic">
-                Lucid Architecture
+                Genetic Mosaic
               </span>
 
               <div className="mt-auto text-white/90">
-                <p className="text-2xl font-serif italic">Constructing</p>
-                <p className="text-4xl font-bold tracking-tighter">Reality</p>
+                <p className="text-2xl font-serif italic">Forging</p>
+                <p className="text-4xl font-bold tracking-tighter">
+                  Impossible
+                </p>
               </div>
             </div>
           </div>
@@ -78,9 +80,8 @@ export default function Collections() {
           {/* Text 1 */}
           <div className="lg:col-span-4 flex flex-col justify-center px-4">
             <p className="text-xl md:text-2xl text-neutral-800 leading-relaxed font-serif italic text-justify">
-              "The boundary between the known and the infinite begins to blur.
-              Here, the soul finds its rhythm in the silence of the
-              subconscious."
+              "The boundary between myth and reality begins to blur. Here, the
+              impossible finds its rhythm in the silence of the subconscious."
             </p>
           </div>
         </div>
@@ -90,9 +91,9 @@ export default function Collections() {
           {/* Text 2 */}
           <div className="lg:col-span-3 flex flex-col justify-center px-4 h-full">
             <p className="text-lg md:text-2xl text-neutral-900 leading-relaxed font-serif italic text-justify">
-              Awakening is not a single event, but a gradual unfolding of the
-              self. In the lucid state, we are both the architect and the
-              occupant of our deepest desires.
+              A chimera is not born through a single event, but a gradual fusion
+              of disparate elements. We become the chaotic architects of our own
+              creations.
             </p>
           </div>
 
@@ -100,13 +101,13 @@ export default function Collections() {
           <div className="lg:col-span-3 relative h-[420px] rounded-[3rem] overflow-hidden group shadow-sm bg-neutral-100">
             <Image
               src="/dreams/dream2.png"
-              alt="Soul Residency"
+              alt="Ethereal Form"
               fill
               className="object-cover opacity-80 transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 p-10 flex flex-col z-10">
               <span className="text-base font-bold text-neutral-900 bg-transparent backdrop-blur-md self-start px-4 py-1 rounded-full tracking-wider italic">
-                Soul Residency
+                Ethereal Form
               </span>
             </div>
           </div>
@@ -115,13 +116,13 @@ export default function Collections() {
           <div className="lg:col-span-3 relative h-[420px] rounded-[3rem] overflow-hidden group shadow-sm bg-neutral-200">
             <Image
               src="/dreams/dream4.png"
-              alt="Collective Pulse"
+              alt="Hybrid Vitality"
               fill
               className="object-cover opacity-90 transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 p-10 flex flex-col z-10">
               <span className="text-base font-bold text-neutral-900 bg-transparent backdrop-blur-md self-start px-4 py-1 rounded-full tracking-wider italic">
-                Collective Pulse
+                Hybrid Vitality
               </span>
             </div>
           </div>
@@ -130,13 +131,13 @@ export default function Collections() {
           <div className="lg:col-span-3 relative h-[420px] rounded-[3rem] overflow-hidden group shadow-sm">
             <Image
               src="/dreams/dream5.png"
-              alt="Transcendence"
+              alt="Ascendant Being"
               fill
               className="object-cover opacity-80 transition-transform duration-700 group-hover:scale-110"
             />
             <div className="absolute inset-0 p-10 flex flex-col z-10">
               <span className="text-base font-bold text-neutral-900 bg-transparent backdrop-blur-md self-start px-4 py-1 rounded-full tracking-wider italic">
-                Transcendence
+                Ascendant Being
               </span>
 
               <div className="mt-auto flex justify-end items-end">
