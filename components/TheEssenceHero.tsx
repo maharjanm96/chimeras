@@ -158,10 +158,10 @@ export default function TheEssenceHero() {
       </div>
 
       {/* Main Image Layer */}
-      <div className="relative z-10 w-full h-full flex items-center justify-center pt-24 pb-12">
+      <div className="relative z-10 w-full h-full flex items-center justify-center pt-24 pb-12 overflow-hidden">
         <div
           ref={imageWrapper}
-          className="relative w-[90vw] md:w-[95vw] h-[75vh] md:h-[80vh] overflow-hidden"
+          className="relative w-[90vw] md:w-[95vw] max-w-full h-[75vh] md:h-[80vh] overflow-hidden"
           style={{ borderRadius: "0px" }}
         >
           {/* Main Hero Content */}

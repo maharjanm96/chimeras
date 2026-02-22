@@ -20,8 +20,8 @@ const ArrowIcon = () => (
 
 export default function Collections() {
   return (
-    <section className="w-full bg-neutral-100 py-12 md:py-24 px-4 md:px-16 rounded-[3.5rem] flex items-center justify-center m-4">
-      <div className="max-w-full flex flex-col gap-12">
+    <section className="bg-neutral-100 py-12 md:py-24 px-4 md:px-16 rounded-[2.5rem] md:rounded-[3.5rem] flex items-center justify-center m-2 md:m-4">
+      <div className="max-w-full flex flex-col gap-12 overflow-hidden">
         {/* Heading Section */}
         <div className="flex flex-col justify-center items-start border-b border-black/10 pb-8">
           <h2 className="text-[8vw] md:text-[4vw] font-serif leading-none italic mb-2">
