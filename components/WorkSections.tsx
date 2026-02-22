@@ -101,10 +101,10 @@ export default function WorkSections() {
               onMouseLeave={() => setActiveImage(null)}
             >
               <div className="section-container flex items-center justify-evenly relative z-10">
-                <span className="text-left-anim font-serif italic text-[3vw] leading-none tracking-tight md:text-[4vw] text-white/90 block transform-gpu">
+                <span className="text-left-anim font-serif italic text-[6vw] leading-none tracking-tight md:text-[4vw] text-white/90 block transform-gpu">
                   {section.left}
                 </span>
-                <span className="text-right-anim text-[3vw] font-serif italic leading-none tracking-tighter md:text-[4vw] text-white/40 block transform-gpu text-right group-hover:text-white/80 transition-colors duration-500">
+                <span className="text-right-anim text-[6vw] font-serif italic leading-none tracking-tighter md:text-[4vw] text-white/40 block transform-gpu text-right group-hover:text-white/80 transition-colors duration-500">
                   {section.right}
                 </span>
               </div>

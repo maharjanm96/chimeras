@@ -20,14 +20,14 @@ const ArrowIcon = () => (
 
 export default function Collections() {
   return (
-    <section className="w-full bg-neutral-100 py-24 px-10 md:px-16 rounded-[3.5rem] flex items-center justify-center m-4">
+    <section className="w-full bg-neutral-100 py-12 md:py-24 px-4 md:px-16 rounded-[3.5rem] flex items-center justify-center m-4">
       <div className="max-w-full flex flex-col gap-12">
         {/* Heading Section */}
         <div className="flex flex-col justify-center items-start border-b border-black/10 pb-8">
-          <h2 className="text-[2vw] md:text-[4vw] font-serif leading-none italic mb-2">
+          <h2 className="text-[8vw] md:text-[4vw] font-serif leading-none italic mb-2">
             The Chimera Archives
           </h2>
-          <p className="text-xl md:text-2xl text-neutral-600 font-serif italic leading-relaxed">
+          <p className="text-[4vw] md:text-2xl text-neutral-600 font-serif italic leading-relaxed">
             A curated collection of manifestations where the impossible takes
             form and reality bends to mythology.
           </p>
@@ -79,7 +79,7 @@ export default function Collections() {
 
           {/* Text 1 */}
           <div className="lg:col-span-4 flex flex-col justify-center px-4">
-            <p className="text-xl md:text-2xl text-neutral-800 leading-relaxed font-serif italic text-justify">
+            <p className="text-[4vw] md:text-2xl text-neutral-800 leading-relaxed font-serif italic text-justify">
               "The boundary between myth and reality begins to blur. Here, the
               impossible finds its rhythm in the silence of the subconscious."
             </p>
@@ -90,7 +90,7 @@ export default function Collections() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Text 2 */}
           <div className="lg:col-span-3 flex flex-col justify-center px-4 h-full">
-            <p className="text-lg md:text-2xl text-neutral-900 leading-relaxed font-serif italic text-justify">
+            <p className="text-[4vw] md:text-2xl text-neutral-900 leading-relaxed font-serif italic text-justify">
               A chimera is not born through a single event, but a gradual fusion
               of disparate elements. We become the chaotic architects of our own
               creations.
