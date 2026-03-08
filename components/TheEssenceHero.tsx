@@ -128,9 +128,9 @@ export default function TheEssenceHero() {
         ref={revealText}
         className="absolute inset-0 z-0 flex items-center pt-24 pb-12"
       >
-        <div className="flex flex-col h-full w-full md:w-[55vw] bg-accent-green/40 rounded-4xl md:ml-4">
+        <div className="flex flex-col h-full w-full md:w-[55vw] md:bg-accent-green/40 rounded-r-4xl">
           {/* CHIMERAS title — sits at top portion */}
-          <div className="flex items-end md:items-start justify-start px-6 md:px-20 pt-6 md:pt-10 mt-auto">
+          <div className="flex items-center md:items-start justify-start px-6 md:px-20 pt-6 md:pt-10 mt-auto">
             <h2 className="text-[17vw] md:text-[9vw] font-serif leading-none text-neutral-800 uppercase italic">
               Chimeras
             </h2>
@@ -141,7 +141,7 @@ export default function TheEssenceHero() {
 
           {/* DESCRIPTION + ARROW — pinned in the middle-bottom band */}
           <div className="flex flex-row items-center justify-between w-full px-6 md:px-20 py-5 md:py-6">
-            <h2 className="w-full md:w-[26vw] text-[3.5vw] md:text-sm font-light leading-relaxed text-neutral-900 text-justify font-serif italic">
+            <h2 className="w-full md:w-[30vw] text-[3.5vw] md:text-base font-light leading-relaxed text-neutral-900 text-justify font-serif italic">
               &quot;Every chimera takes shape in the silence of the
               subconscious, but manifestation gives it life. When the soul
               recognizes its own elusive longing, illusion transforms into will,
@@ -188,7 +188,7 @@ export default function TheEssenceHero() {
             src="/main.png"
             alt="Nature"
             fill
-            className="w-full h-full object-cover rounded-4xl md:rounded-[4rem]"
+            className="w-full h-full object-cover rounded-[2rem] md:rounded-[4rem]"
           />
         </div>
       </div>
