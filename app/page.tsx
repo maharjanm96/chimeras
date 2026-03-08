@@ -1,13 +1,13 @@
 import Collections from "@/components/Collections";
+import Keywords from "@/components/Keywords";
 import TheEssenceHero from "@/components/TheEssenceHero";
-import WorkSections from "@/components/WorkSections";
 
 export default function Home() {
   return (
     <main>
       <TheEssenceHero />
       <Collections />
-      <WorkSections />
+      <Keywords />
     </main>
   );
 }

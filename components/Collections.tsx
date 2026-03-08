@@ -80,8 +80,9 @@ export default function Collections() {
           {/* Text 1 */}
           <div className="lg:col-span-4 flex flex-col justify-center px-4">
             <p className="text-[4vw] md:text-2xl text-neutral-800 leading-relaxed font-serif italic text-justify">
-              "The boundary between myth and reality begins to blur. Here, the
-              impossible finds its rhythm in the silence of the subconscious."
+              &quot;The boundary between myth and reality begins to blur. Here,
+              the impossible finds its rhythm in the silence of the
+              subconscious.&quot;
             </p>
           </div>
         </div>

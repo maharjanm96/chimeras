@@ -19,7 +19,6 @@ export default function TheEssenceHero() {
 
   useGSAP(
     () => {
-      // 1. Initialize Smooth Scroll (Lenis)
       const lenis = new Lenis();
       function raf(time: number) {
         lenis.raf(time);
@@ -27,18 +26,16 @@ export default function TheEssenceHero() {
       }
       requestAnimationFrame(raf);
 
-      // 2. Main Scroll Timeline with matchMedia
       const mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
-        // Desktop Animation
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: container.current,
             start: "top top",
-            end: "+=200%", // Scroll distance
-            scrub: 1, // Smooth scrubbing
-            pin: true, // Pin the section
+            end: "+=200%",
+            scrub: 1,
+            pin: true,
             invalidateOnRefresh: true,
           },
         });
@@ -48,7 +45,7 @@ export default function TheEssenceHero() {
           {
             width: "35vw",
             height: "75vh",
-            x: "25vw", // Move to right
+            x: "25vw",
             borderRadius: "2rem",
             ease: "power2.inOut",
           },
@@ -68,17 +65,16 @@ export default function TheEssenceHero() {
             revealText.current,
             { opacity: 0, x: -100 },
             { opacity: 1, x: 0, ease: "power2.out" },
-            0.2, // Starts slightly after image begins moving
+            0.2,
           );
       });
 
       mm.add("(max-width: 767px)", () => {
-        // Mobile Animation
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: container.current,
             start: "top top",
-            end: "+=150%", // Slightly shorter scroll distance
+            end: "+=150%",
             scrub: 1,
             pin: true,
             invalidateOnRefresh: true,
@@ -90,7 +86,7 @@ export default function TheEssenceHero() {
           {
             width: "90vw",
             height: "45vh",
-            y: "-18vh", // Move it up nicely into the top half
+            y: "-18vh",
             borderRadius: "1.5rem",
             ease: "power2.inOut",
           },
@@ -116,7 +112,7 @@ export default function TheEssenceHero() {
 
       return () => {
         lenis.destroy();
-        mm.revert(); // Cleanup matchMedia on unmount
+        mm.revert();
       };
     },
     { scope: container },
@@ -127,17 +123,25 @@ export default function TheEssenceHero() {
       ref={container}
       className="relative min-h-screen w-full overflow-hidden"
     >
-      {/* Background Big Text (Revealed later) */}
+      {/* Revealed Left Panel */}
       <div
         ref={revealText}
-        className="absolute inset-x-6 bottom-10 md:inset-20 flex flex-col justify-end md:justify-evenly z-0 pt-24 md:pt-0"
+        className="absolute inset-0 z-0 flex items-center pt-24 pb-12"
       >
-        <div className="flex flex-col items-center justify-center gap-4 md:flex md:items-start md:justify-evenly md:h-[60vh]">
-          <h2 className="text-[17vw] md:text-[10vw] font-serif leading-none text-neutral-800 uppercase italic">
-            Chimeras
-          </h2>
-          <div className="flex flex-col md:flex-row gap-4 md:gap-60 items-start md:items-center justify-start mt-2 md:mt-0 md:px-10">
-            <h2 className="w-full md:w-[25vw] text-[4vw] md:text-lg font-light leading-relaxed md:leading-none text-neutral-900 text-justify font-serif italic">
+        <div className="flex flex-col h-full w-full md:w-[55vw] bg-accent-green/40 rounded-4xl md:ml-4">
+          {/* CHIMERAS title — sits at top portion */}
+          <div className="flex items-end md:items-start justify-start px-6 md:px-20 pt-6 md:pt-10 mt-auto">
+            <h2 className="text-[17vw] md:text-[9vw] font-serif leading-none text-neutral-800 uppercase italic">
+              Chimeras
+            </h2>
+          </div>
+
+          {/* Flex spacer — pushes description band down */}
+          <div className="flex-1" />
+
+          {/* DESCRIPTION + ARROW — pinned in the middle-bottom band */}
+          <div className="flex flex-row items-center justify-between w-full px-6 md:px-20 py-5 md:py-6">
+            <h2 className="w-full md:w-[26vw] text-[3.5vw] md:text-sm font-light leading-relaxed text-neutral-900 text-justify font-serif italic">
               &quot;Every chimera takes shape in the silence of the
               subconscious, but manifestation gives it life. When the soul
               recognizes its own elusive longing, illusion transforms into will,
@@ -151,9 +155,12 @@ export default function TheEssenceHero() {
               alt="Arrow"
               width={100}
               height={100}
-              className="w-[3rem] h-[3rem] md:w-[7rem] md:h-[7rem] text-neutral-800 font-light hidden md:block"
+              className="hidden md:block w-[8vw] h-[8vw] md:w-[5vw] md:h-[5vw] max-w-[7rem] max-h-[7rem] text-neutral-800 font-light shrink-0"
             />
           </div>
+
+          {/* Bottom spacer — reserve space so description isn't flush to bottom */}
+          <div style={{ height: "18%" }} />
         </div>
       </div>
 
@@ -161,11 +168,11 @@ export default function TheEssenceHero() {
       <div className="relative z-10 w-full h-full flex items-center justify-center pt-24 pb-12 overflow-hidden">
         <div
           ref={imageWrapper}
-          className="relative w-[90vw] md:w-[95vw] max-w-full h-[75vh] md:h-[80vh] overflow-hidden"
+          className="relative w-[90vw] md:w-[95vw] max-w-full h-[75vh] md:h-full overflow-hidden"
           style={{ borderRadius: "0px" }}
         >
-          {/* Main Hero Content */}
-          <div className="absolute inset-0 md:-inset-20 z-20 flex flex-col justify-center items-center text-center p-6 md:p-10">
+          {/* Hero Text Overlay */}
+          <div className="absolute inset-0 md:-inset-20 z-20 flex flex-col justify-center items-center text-center p-0 md:p-0">
             <h1
               ref={mainTitle}
               className="text-[10vw] md:text-[8vw] font-serif leading-[1.1] md:leading-[0.9] italic 
@@ -176,12 +183,12 @@ export default function TheEssenceHero() {
             </h1>
           </div>
 
-          {/* Placeholder Image */}
+          {/* Main Image */}
           <Image
             src="/main.png"
             alt="Nature"
             fill
-            className="w-full h-full object-cover rounded-[2rem] md:rounded-[4rem]"
+            className="w-full h-full object-cover rounded-4xl md:rounded-[4rem]"
           />
         </div>
       </div>

@@ -1,70 +1,116 @@
 "use client";
 
 import { useGSAP } from "@gsap/react";
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
+import Image from "next/image";
+import { useRef, useState } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
-const KEYWORDS = [
-  "Friendly",
-  "Eco",
-  "Textures",
-  "Organic",
-  "Glow",
-  "Brighten",
-  "Aesthetics",
-  "Natural",
+const SECTIONS = [
+  { left: "Mythical", right: "Origins", image: "/dreams/dream1.png" },
+  { left: "Genetic", right: "Fusion", image: "/dreams/dream2.png" },
+  { left: "Silent", right: "Subconscious", image: "/dreams/dream3.png" },
+  { left: "Impossible", right: "Pursuits", image: "/dreams/dream4.png" },
+  { left: "Awakened", right: "Realities", image: "/dreams/dream5.png" },
 ];
 
-export default function Keywords() {
-  const containerRef = useRef<HTMLDivElement>(null);
+export default function WorkSections() {
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(
     () => {
-      const badges = containerRef.current?.querySelectorAll(".keyword-badge");
-      if (!badges) return;
+      const handleMouseMove = (e: MouseEvent) => {
+        gsap.to(cursorRef.current, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.6,
+          ease: "power3.out",
+        });
+      };
 
-      gsap.from(badges, {
-        opacity: 0,
-        y: 30,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
+      window.addEventListener("mousemove", handleMouseMove);
+
+      const rows = gsap.utils.toArray(".section-row") as HTMLElement[];
+      rows.forEach((row) => {
+        const leftText = row.querySelector(".text-left-anim");
+        const rightText = row.querySelector(".text-right-anim");
+
+        gsap.fromTo(
+          [leftText, rightText],
+          { y: 80, opacity: 0, rotateX: -15 },
+          {
+            y: 0,
+            opacity: 1,
+            rotateX: 0,
+            duration: 1.2,
+            ease: "expo.out",
+            stagger: 0.1,
+            scrollTrigger: {
+              trigger: row,
+              start: "top 90%",
+              toggleActions: "play none none reverse",
+            },
+          },
+        );
       });
+
+      return () => window.removeEventListener("mousemove", handleMouseMove);
     },
-    { scope: containerRef }
+    { scope: sectionRef },
   );
 
   return (
     <section
-      id="keywords-section"
-      className="section-padding relative z-10 py-28"
+      ref={sectionRef}
+      className="relative z-20 bg-[#050505] text-white py-16 rounded-[2.5rem] m-3"
     >
+      {/* Floating Hover Image */}
       <div
-        ref={containerRef}
-        className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-4 md:gap-6"
+        ref={cursorRef}
+        className="pointer-events-none fixed left-0 top-0 z-100 h-100 w-80 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-xl opacity-0 scale-50 transition-all duration-300 ease-out"
+        style={{
+          opacity: activeImage ? 1 : 0,
+          transform: `translate(-50%, -50%) scale(${
+            activeImage ? 1 : 0.5
+          }) rotate(${activeImage ? 5 : 0}deg)`,
+        }}
       >
-        {KEYWORDS.map((word) => (
-          <motion.span
-            key={word}
-            className="keyword-badge inline-block cursor-default rounded-full border border-border bg-bg-primary/60 px-5 py-2.5 text-[0.85rem] font-medium tracking-wide text-text-primary/80 shadow-[0_4px_6px_rgba(0,0,0,0.05)] backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_6px_20px_rgba(139,154,107,0.15)] md:px-7 md:py-3 md:text-[1rem]"
-            whileHover={{
-              scale: 1.08,
-              rotate: Math.random() > 0.5 ? 2 : -2,
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-          >
-            {word}
-          </motion.span>
-        ))}
+        {activeImage && (
+          <Image
+            src={activeImage}
+            alt="Hover Preview"
+            fill
+            className="object-cover hidden md:block"
+          />
+        )}
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 max-w-7xl">
+        <div className="border-t border-white/10">
+          {SECTIONS.map((section, idx) => (
+            <div
+              key={idx}
+              className="section-row group relative border-b border-white/10 py-4 transition-colors hover:bg-white/5 cursor-none overflow-hidden"
+              onMouseEnter={() => setActiveImage(section.image)}
+              onMouseLeave={() => setActiveImage(null)}
+            >
+              <div className="section-container flex items-center justify-evenly relative z-10">
+                <span className="text-left-anim font-serif italic text-[6vw] leading-none tracking-tight md:text-[4vw] text-white/90 block transform-gpu">
+                  {section.left}
+                </span>
+                <span className="text-right-anim text-[6vw] font-serif italic leading-none tracking-tighter md:text-[4vw] text-white/40 block transform-gpu text-right group-hover:text-white/80 transition-colors duration-500">
+                  {section.right}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
