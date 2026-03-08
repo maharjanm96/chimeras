@@ -68,7 +68,7 @@ export default function WorkSections() {
   return (
     <section
       ref={sectionRef}
-      className="relative z-20 bg-[#050505] text-white py-16 rounded-[2.5rem] m-3"
+      className="relative z-20 bg-[#050505] text-white py-16"
     >
       {/* Floating Hover Image */}
       <div

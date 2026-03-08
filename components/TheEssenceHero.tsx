@@ -28,7 +28,7 @@ export default function TheEssenceHero() {
 
       const mm = gsap.matchMedia();
 
-      mm.add("(min-width: 768px)", () => {
+      mm.add("(min-width: 767px)", () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: container.current,
@@ -126,22 +126,19 @@ export default function TheEssenceHero() {
       {/* Revealed Left Panel */}
       <div
         ref={revealText}
-        className="absolute inset-0 z-0 flex items-center pt-24 pb-12"
+        className="absolute inset-0 z-0 flex items-center pt-44 md:pt-24 md:pb-6"
       >
-        <div className="flex flex-col h-full w-full md:w-[55vw] md:bg-accent-green/40 rounded-r-4xl">
+        <div className="flex flex-col h-[120vw] md:h-full w-full md:w-[50vw] md:bg-accent-green/40 md:rounded-r-4xl itens-center justify-end md:justify-evenly gap-2 md:gap-0 m-2 md:m-0 pb-6">
           {/* CHIMERAS title — sits at top portion */}
-          <div className="flex items-center md:items-start justify-start px-6 md:px-20 pt-6 md:pt-10 mt-auto">
-            <h2 className="text-[17vw] md:text-[9vw] font-serif leading-none text-neutral-800 uppercase italic">
+          <div className="flex items-center justify-center">
+            <h2 className="text-[17vw] md:text-[8vw] font-serif leading-none text-neutral-800 uppercase italic">
               Chimeras
             </h2>
           </div>
 
-          {/* Flex spacer — pushes description band down */}
-          <div className="flex-1" />
-
           {/* DESCRIPTION + ARROW — pinned in the middle-bottom band */}
-          <div className="flex flex-row items-center justify-between w-full px-6 md:px-20 py-5 md:py-6">
-            <h2 className="w-full md:w-[30vw] text-[3.5vw] md:text-base font-light leading-relaxed text-neutral-900 text-justify font-serif italic">
+          <div className="flex flex-row items-center justify-around  w-full">
+            <h2 className="w-[80vw] md:w-[29vw] text-[3.5vw] md:text-base font-light leading-relaxed text-neutral-900 text-justify font-serif italic">
               &quot;Every chimera takes shape in the silence of the
               subconscious, but manifestation gives it life. When the soul
               recognizes its own elusive longing, illusion transforms into will,
@@ -160,7 +157,6 @@ export default function TheEssenceHero() {
           </div>
 
           {/* Bottom spacer — reserve space so description isn't flush to bottom */}
-          <div style={{ height: "18%" }} />
         </div>
       </div>
 
