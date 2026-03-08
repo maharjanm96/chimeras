@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Header from "../components/Header";
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <Header />
       <body className="antialiased">{children}</body>
+      <Footer />
     </html>
   );
 }

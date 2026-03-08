@@ -28,7 +28,7 @@ export default function TheEssenceHero() {
       requestAnimationFrame(raf);
 
       // 2. Main Scroll Timeline with matchMedia
-      let mm = gsap.matchMedia();
+      const mm = gsap.matchMedia();
 
       mm.add("(min-width: 768px)", () => {
         // Desktop Animation
@@ -138,12 +138,12 @@ export default function TheEssenceHero() {
           </h2>
           <div className="flex flex-col md:flex-row gap-4 md:gap-60 items-start md:items-center justify-start mt-2 md:mt-0 md:px-10">
             <h2 className="w-full md:w-[25vw] text-[4vw] md:text-lg font-light leading-relaxed md:leading-none text-neutral-900 text-justify font-serif italic">
-              "Every chimera takes shape in the silence of the subconscious, but
-              manifestation gives it life. When the soul recognizes its own
-              elusive longing, illusion transforms into will, and will into
-              form. In that moment of emergence, the intangible sheds its
-              shadows, and what was once a fleeting phantom steps forward into
-              reality."
+              &quot;Every chimera takes shape in the silence of the
+              subconscious, but manifestation gives it life. When the soul
+              recognizes its own elusive longing, illusion transforms into will,
+              and will into form. In that moment of emergence, the intangible
+              sheds its shadows, and what was once a fleeting phantom steps
+              forward into reality.&quot;
             </h2>
 
             <Image
@@ -169,8 +169,7 @@ export default function TheEssenceHero() {
             <h1
               ref={mainTitle}
               className="text-[10vw] md:text-[8vw] font-serif leading-[1.1] md:leading-[0.9] italic 
-             text-slate-200/30 mix-blend-difference hover:text-slate-200/60 
-             transition-opacity duration-1000"
+             text-slate-200/30 mix-blend-difference"
             >
               Where Illusions <br />
               <i className="font-light italic">Emerge & Endure</i>
